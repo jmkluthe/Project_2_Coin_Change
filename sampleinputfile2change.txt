@@ -1,2 +1,0 @@
-Algorithm changeslow:[1, 5, 10][2, 1, 1]4
-Algorithm changegreedy:[1, 5, 10][2, 1, 1]4

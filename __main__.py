@@ -25,15 +25,24 @@ def main():
     if not (len(sys.argv) > 0):
         print("You must supply a file for input.")
         exit(1)
-    infilename = "sampleinputfile2.txt"#str(sys.argv[1])
+    infilename = str(sys.argv[1])
     outfilename = make_change_filename(infilename)
     denoms, amount = read_input(infilename)
     with open(outfilename, "w") as outfile:
         coins = changeslow(denoms, amount)
-        outfile.writelines([str(el) for el in ["Algorithm changeslow:", denoms, coins, sum(coins), "\n"]])
+        outfile.writelines("\n".join(["Algorithm changeslow:",
+                            " ".join([str(el) for el in denoms]),
+                            " ".join([str(el) for el in coins]),
+                            str(sum(coins)),
+                            "\n"]))
         coins = changegreedyalg(denoms, amount)
-        outfile.writelines([str(el) for el in ["Algorithm changegreedy:", denoms, coins, sum(coins), "\n"]])
+        outfile.writelines("\n".join(["Algorithm changegreedy:",
+                            " ".join([str(el) for el in denoms]),
+                            " ".join([str(el) for el in coins]),
+                            str(sum(coins)),
+                            "\n"]))
 
 
 if __name__ == "__main__":
     main()
+
