@@ -17,23 +17,23 @@ def changegreedyalg(denoms, amount):
 	return numcoins
 
 
-inputfilename = str(sys.argv[1])
-#print inputfilename
-inputfile = open(inputfilename, "r")
-lines = [line.rstrip('\r\n') for line in open(inputfilename)]
-
-denoms = lines[0].split(" ")
-denoms = list(map(int, denoms))
-
-
-amount = int(lines[1])
-#print denoms
-#print amount
-
-
-numcoins = changegreedyalg(denoms, amount)
-totalcoins = sum(numcoins)
-print numcoins
-print totalcoins
+# inputfilename = str(sys.argv[1])
+# #print inputfilename
+# inputfile = open(inputfilename, "r")
+# lines = [line.rstrip('\r\n') for line in open(inputfilename)]
+#
+# denoms = lines[0].split(" ")
+# denoms = list(map(int, denoms))
+#
+#
+# amount = int(lines[1])
+# #print denoms
+# #print amount
+#
+#
+# numcoins = changegreedyalg(denoms, amount)
+# totalcoins = sum(numcoins)
+# print numcoins
+# print totalcoins
 
 
