@@ -2,6 +2,7 @@
 
 import sys
 from changegreedyalg import changegreedyalg
+from changedp import changedp
 
 
 def read_input(infilename):
@@ -42,12 +43,14 @@ def main():
                                 str(sum(coins)),
                                 "\n"]))
             # change 'changeslow' to make this run the dynamic algorithm
-            # coins = changeslow(denoms, amounts[index])
-            # outfile.writelines("\n".join(["Algorithm changeslow:",
-            #                     " ".join([str(el) for el in denoms]),
-            #                     " ".join([str(el) for el in coins]),
-            #                     str(sum(coins)),
-            #                     "\n"]))
+            coins = changedp(denoms, amounts[index])
+        
+            outfile.writelines("\n".join(["Algorithm changedp:",
+                                 " ".join([str(el) for el in denoms]),
+                                 " ".join([str(el) for el in coins]),
+                                 str(sum(coins)),
+                                 "\n"]))
+            
 
 
 if __name__ == "__main__":
