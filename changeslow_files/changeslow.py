@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
 
-
-from functools import reduce
 from math import inf
 
 
@@ -21,6 +19,3 @@ def changeslow(V, A):
     return C
 
 
-# V = [1, 5, 10]
-# A = 17
-# print(changeslow(V, A))

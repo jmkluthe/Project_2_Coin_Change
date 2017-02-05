@@ -2,17 +2,22 @@
 
 import sys
 from changegreedyalg import changegreedyalg
-from changeslow import changeslow
 
 
 def read_input(infilename):
-    # open(infilename, "r")
+    list_denoms = []
+    amounts = []
     with open(infilename, 'r') as infile:
         lines = [line.rstrip('\r\n') for line in infile]
-        denoms = lines[0].split(" ")
-        denoms = list(map(int, denoms))
-        amount = int(lines[1])
-    return denoms, amount
+        for i in range(0, len(lines), 2):
+            denoms = lines[i].split(" ")
+            denoms = list(map(int, denoms))
+            amount = int(lines[i+1])
+            if denoms:
+                list_denoms.append(denoms)
+            if amount:
+                amounts.append(amount)
+    return list_denoms, amounts
 
 
 def make_change_filename(infilename):
@@ -27,20 +32,22 @@ def main():
         exit(1)
     infilename = str(sys.argv[1])
     outfilename = make_change_filename(infilename)
-    denoms, amount = read_input(infilename)
+    list_denoms, amounts = read_input(infilename)
     with open(outfilename, "w") as outfile:
-        coins = changeslow(denoms, amount)
-        outfile.writelines("\n".join(["Algorithm changeslow:",
-                            " ".join([str(el) for el in denoms]),
-                            " ".join([str(el) for el in coins]),
-                            str(sum(coins)),
-                            "\n"]))
-        coins = changegreedyalg(denoms, amount)
-        outfile.writelines("\n".join(["Algorithm changegreedy:",
-                            " ".join([str(el) for el in denoms]),
-                            " ".join([str(el) for el in coins]),
-                            str(sum(coins)),
-                            "\n"]))
+        for index, denoms in enumerate(list_denoms):
+            coins = changegreedyalg(denoms, amounts[index])
+            outfile.writelines("\n".join(["Algorithm changegreedy:",
+                                " ".join([str(el) for el in denoms]),
+                                " ".join([str(el) for el in coins]),
+                                str(sum(coins)),
+                                "\n"]))
+            # change 'changeslow' to make this run the dynamic algorithm
+            # coins = changeslow(denoms, amounts[index])
+            # outfile.writelines("\n".join(["Algorithm changeslow:",
+            #                     " ".join([str(el) for el in denoms]),
+            #                     " ".join([str(el) for el in coins]),
+            #                     str(sum(coins)),
+            #                     "\n"]))
 
 
 if __name__ == "__main__":
