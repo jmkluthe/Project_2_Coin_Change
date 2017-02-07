@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from changeslow_files.changeslow import changeslow
+from changeslow import changeslow
 from time import time
 
 def get_times(denoms, n):
