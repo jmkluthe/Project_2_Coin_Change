@@ -6,7 +6,7 @@ Authors:
     <li>changeslow.py
     <li>get_times.py
     <li>run_changeslow.py
-    <li>`__init__.py` and `__main__.py`
+    <li>\_\_init\_\_.py and \_\_main\_\_.py
   </ul>
   <p>Rohan Gokhale</p>
   <ul>
@@ -21,7 +21,7 @@ Program uses Python 3.x interpreter and is packaged into a module.
 
 To run outside of the directory, use command "python3 Project_2_Coin_Change 'relative/link/to/file.txt'".
 
-To run inside directory, use command "`__main__.py` 'relative/link/to/file.txt'" or "python3 `__main__.py` 'relative/link/to/file.txt'".
+To run inside directory, use command "\_\_main\_\_.py 'relative/link/to/file.txt'" or "python3 \_\_main\_\_.py 'relative/link/to/file.txt'".
 
 Running the module in this way reads the input file and runs each set of coins and change amount
 through the greedy and dynamic programming algorithms. Since the changeslow algorithm is much slower
