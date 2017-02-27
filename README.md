@@ -1,5 +1,22 @@
 # Project_2_Coin_Change
 
+Authors:
+  <p>Joshua Kluthe</p>
+  <ul>
+    <li>changeslow.py
+    <li>get_times.py
+    <li>run_changeslow.py
+    <li>__init__.py and __main__.py
+  </ul>
+  <p>Rohan Gokhale</p>
+  <ul>
+    <li>changegreedyalg.py
+  </ul>
+  <p>Alan Seims<p>
+  <ul>
+    <li>changedp.py
+  </ul>
+
 Program uses Python 3.x interpreter and is packaged into a module.
 
 To run outside of the directory, use command "python3 Project_2_Coin_Change 'relative/link/to/file.txt'".
